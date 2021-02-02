@@ -4,7 +4,7 @@
   <artifactId>delta-launcher</artifactId>
   <packaging>jar</packaging>
   <version>1.0-SNAPSHOT</version>
-  <name>Launcher</name>
+  <name>launcher</name>
   <parent>
     <groupId>com.dam.delta4j</groupId>
     <artifactId>maven-definitions</artifactId>

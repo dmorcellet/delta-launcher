@@ -8,8 +8,12 @@ import java.net.URLClassLoader;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.log4j.Logger;
+
+import delta.common.utils.xml.DOMParsingTools;
 import delta.launcher.data.Classpath;
 import delta.launcher.data.LauncherConfiguration;
+import delta.launcher.data.io.xml.LauncherConfigurationXmlIO;
 
 /**
  * Application launcher.
@@ -18,6 +22,8 @@ import delta.launcher.data.LauncherConfiguration;
  */
 public class Launcher
 {
+  private static final Logger LOGGER=Logger.getLogger(Launcher.class);
+
   private static URLClassLoader buildClassLoader(LauncherConfiguration config)
   {
     File rootDir=config.getRootDir();
@@ -72,6 +78,24 @@ public class Launcher
     catch(Exception e)
     {
       throw new RuntimeException("",e);
+    }
+  }
+
+  /**
+   * Main method for this test.
+   * @param args Not used.
+   */
+  public static void main(String[] args)
+  {
+    try
+    {
+      File configFile=new File("launcher.xml");
+      LauncherConfiguration config=LauncherConfigurationXmlIO.parseFile(configFile);
+      launch(config);
+    }
+    catch(Throwable t)
+    {
+      LOGGER.error("Caught fatal exception!", t);
     }
   }
 }
