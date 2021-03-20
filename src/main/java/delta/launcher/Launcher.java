@@ -10,7 +10,6 @@ import java.util.List;
 
 import org.apache.log4j.Logger;
 
-import delta.common.utils.xml.DOMParsingTools;
 import delta.launcher.data.Classpath;
 import delta.launcher.data.LauncherConfiguration;
 import delta.launcher.data.io.xml.LauncherConfigurationXmlIO;
