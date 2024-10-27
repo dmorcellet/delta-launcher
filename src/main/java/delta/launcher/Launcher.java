@@ -8,7 +8,8 @@ import java.net.URLClassLoader;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import delta.launcher.data.Classpath;
 import delta.launcher.data.LauncherConfiguration;
@@ -21,7 +22,7 @@ import delta.launcher.data.io.xml.LauncherConfigurationXmlIO;
  */
 public class Launcher
 {
-  private static final Logger LOGGER=Logger.getLogger(Launcher.class);
+  private static final Logger LOGGER=LoggerFactory.getLogger(Launcher.class);
 
   private static URLClassLoader buildClassLoader(LauncherConfiguration config)
   {
